@@ -4,7 +4,7 @@ article.tweet {
   border-width: 1px;
   border-color: lightgrey;
   border-radius: 5px;
-  margin: 10px 20px 20px 20px;
+  margin: 20px 20px 20px 20px;
   opacity: .6;
 }
 article:hover {
