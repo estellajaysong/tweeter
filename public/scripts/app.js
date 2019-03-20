@@ -30,8 +30,14 @@ function renderTweets(tweets) {
 // post-tweet POST req to server
 $( "#post-tweet" ).submit(function( event ) {
   event.preventDefault();
+  if ($("textarea").val().length > 140) {
+    alert("Oops! Your Tweet has exceeded the 140-character limit")
+  } else if ($("textarea").val() === "") {
+    alert("Oops! You cannot submit an empty Tweet")
+  } else {
   let data = ($(this).serialize());
   $.post("/tweets", data);
+  };
 });
 
 // AJAX GET req to server for tweets and then render the Tweets
