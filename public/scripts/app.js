@@ -49,11 +49,10 @@ const data = [
     "created_at": 1461113796368
   }
 ];
-
+//when document is loaded...
 $(document).ready(function(){ 
 
-
-
+//creates the HTML element for a new Tweet
 function createTweetElement(data) {
   let $tweet = $("<article>").addClass("tweet");
   $tweet.append($("<header>")
@@ -67,21 +66,18 @@ function createTweetElement(data) {
   return $tweet;
 }
 
-
-// let $newTweet = createTweetElement(data[0]);
-// console.log($newTweet);
-// $('.tweet-container').append($newTweet);
-
+//loops through Tweets, creates the HTML element, and appends it to the Tweet container
 function renderTweets(tweets) {
-  console.log($(".tweet-container"));
-
   tweets.forEach((tweet) => {
     $(".tweet-container").append(createTweetElement(tweet));
-    console.log("in da loop");
   });
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
 }
 renderTweets(data)
+
+// post-tweet POST req to server
+$( "#post-tweet" ).submit(function( event ) {
+  event.preventDefault();
+  let data = ($(this).serialize());
+  $.post("/tweets", data,);
 });
+})
