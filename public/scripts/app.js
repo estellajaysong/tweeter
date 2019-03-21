@@ -55,17 +55,8 @@ loadTweets();
 
   // Compose button click event to hide and unhide new-tweet section with sliding action
   $("#compose-button").click(function() {
-    if ($(".new-tweet").css("display") === "none") {
-    $(".new-tweet").slideDown( "fast", function() {
-      $(".new-tweet").css("display", "block");
-      $("textarea").focus();
-    })} else if ($(".new-tweet").css("display") === "block") {
-      $(".new-tweet").slideUp( "fast", function() {
-        $(".new-tweet").css("display", "none");
-      })};
+    $(".new-tweet").slideToggle("fast");
+    $("textarea").focus();
   });
-
-
-
 
 })
