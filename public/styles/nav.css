@@ -22,3 +22,20 @@
   vertical-align: middle;
   padding-left: 10px
 }
+
+#compose-button {
+  padding: 15px 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  border-radius: 5px;
+  background-color:#eafff9;
+  float: right;
+  margin-top: 14px;
+  color: #00a087
+}
+
+#compose-button:hover {
+  background-color: white;
+  color: black
+}

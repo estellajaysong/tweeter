@@ -6,6 +6,7 @@ section.new-tweet {
   border-color: lightgrey;
   border-radius: 5px;
   text-align: left;
+  display: none
 }
 
 section.new-tweet h2 {
