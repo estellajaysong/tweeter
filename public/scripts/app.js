@@ -23,14 +23,14 @@ function createTweetElement(data) {
 //loops through Tweets, creates the HTML element, and appends it to the Tweet container
 function renderTweets(tweets) {
   tweets.forEach((tweet) => {
-    $(".tweet-container").append(createTweetElement(tweet));
+    $(".tweet-container").prepend(createTweetElement(tweet));
   });
 }
 // AJAX GET req to server for tweets and then render the Tweets
 function loadTweets() {
   $.ajax("/tweets")
     .done((response) => {
-      renderTweets(response)
+      renderTweets(response);
     })
 };
 loadTweets();
@@ -38,10 +38,13 @@ loadTweets();
 // post-tweet POST req to server and shows the Tweet without refreshing the page
   $("#post-tweet").submit(function (event) {
     event.preventDefault();
+    $("#error-message").slideUp( "fast")
     if ($("textarea").val().length > 140) {
-      alert("Oops! Your Tweet has exceeded the 140-character limit");
+      $("#error-message").html("Your Tweet has exceeded the 140-character limit");
+      $("#error-message").slideDown( "fast")
     } else if ($("textarea").val() === "") {
-      alert("Oops! You cannot submit an empty Tweet");
+      $("#error-message").html("Please fill out this field");
+      $("#error-message").slideDown( "fast")
     } else {
       let data = ($(this).serialize());
       $.post("/tweets", data, (response) => {

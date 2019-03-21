@@ -6,7 +6,7 @@ section.new-tweet {
   border-color: lightgrey;
   border-radius: 5px;
   text-align: left;
-  display: none
+  /* display: none */
 }
 
 section.new-tweet h2 {
@@ -28,4 +28,13 @@ section.new-tweet input {
 section .counter {
   margin-right: 10px;
   float: right
+}
+
+#error-message {
+  color:red;
+  padding-left: 80px;
+  font-size: 90%;
+  margin-top: -30px;
+  padding-bottom: 13px;
+  display: none
 }
