@@ -1,13 +1,11 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 //when document is loaded...
 $(document).ready(function () {
   //creates the HTML element for a new Tweet
   function createTweetElement(data) {
+    let date = new Date(data.created_at);
+    date = date.toISOString();
+    let relDate = moment(date).fromNow();
+    console.log(relDate)
     let $tweet = $("<article>").addClass("tweet");
     $tweet.append($("<header>")
       .append($("<img>").addClass("icon").attr("src", data.user.avatars.regular))
@@ -16,7 +14,9 @@ $(document).ready(function () {
     );
     $tweet.append($("<div>").addClass("content").text(data.content.text)
     );
-    $tweet.append($("<footer>").text(data.created_at));
+    $tweet.append($("<footer>").text(relDate)
+      .append($("<img>").addClass("tweet-actions").attr("src", "./images/tweet-actions.jpeg"))
+    );
     return $tweet;
   };
 
@@ -53,6 +53,7 @@ $(document).ready(function () {
           .done((response) => {
             $(".tweet-container").prepend(createTweetElement(response[response.length - 1]));
             $("textarea").val("");
+            $("#counter").html("140");
           });
       });
     };

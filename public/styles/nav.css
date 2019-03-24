@@ -20,7 +20,7 @@
   font-size: 200%;
   line-height: 80px;
   vertical-align: middle;
-  padding-left: 10px
+  padding-left: 10px;
 }
 
 #compose-button {
@@ -32,10 +32,10 @@
   background-color:#eafff9;
   float: right;
   margin-top: 14px;
-  color: #00a087
+  color: #00a087;
 }
 
 #compose-button:hover {
   background-color: white;
-  color: black
+  color: black;
 }

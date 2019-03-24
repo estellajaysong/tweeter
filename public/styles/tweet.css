@@ -11,9 +11,19 @@ article:hover {
   opacity: 1;
 }
 
+article:hover .tweet-actions {
+  display: block;
+}
+
+img.tweet-actions {
+  height: 20px;
+  float: right;
+  display: none;
+}
+
 div.content {
   padding: 25px 15px;
-  text-align: left
+  text-align: left;
 }
 article.tweet header {
   background-color: #eee;
@@ -38,15 +48,15 @@ span.handle {
 }
 
 div.displayName {
-  font-size: 200%;
+  font-size: 190%;
   font-weight: bold;
   text-align: left;
-  padding: 10px
+  padding: 10px;
 }
 
 article.tweet footer {
   border-top: 1px solid;
   border-color: #eee;
   text-align: left;
-  padding: 10px
+  padding: 10px;
 }

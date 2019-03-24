@@ -1,9 +1,7 @@
 section.new-tweet {
-  margin: 0px 20px 10px 20px;
+  margin: 0px 20px 10px;
   background-color:#eee;
-  border-style: solid;
-  border-width: 1px;
-  border-color: lightgrey;
+  border: 1px solid lightgrey;
   border-radius: 5px;
   text-align: left;
   display: none
@@ -16,18 +14,18 @@ section.new-tweet h2 {
 
 section.new-tweet textarea {
   width: 95%;
-  margin: 10px 10px 2px 10px;
+  margin: 10px 10px 2px;
   padding: 5px;
 }
 
 section.new-tweet input {
   margin-left: 10px;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 
 section .counter {
   margin-right: 10px;
-  float: right
+  float: right;
 }
 
 #error-message {
@@ -36,5 +34,5 @@ section .counter {
   font-size: 90%;
   margin-top: -30px;
   padding-bottom: 13px;
-  display: none
+  display: none;
 }
